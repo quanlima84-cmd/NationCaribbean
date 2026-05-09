@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caribbean Streams</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              black: '#050505',
+              dark: '#0a0a0a',
+              gray: '#171717',
+              light: '#e5e5e5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background: #050505; font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+
+<body class="text-white min-h-screen">
+
+  <nav style="padding:20px; display:flex; justify-content:space-between;">
+    <h1>Caribbean Streams</h1>
+    <button onclick="alert('Login clicked')">Login</button>
+  </nav>
+
+  <section style="text-align:center; padding:80px 20px;">
+    <h1 style="font-size:48px;">Caribbean Streams</h1>
+    <p>Stream movies and TV shows from the Caribbean.</p>
+    <button onclick="alert('Start Watching')">Start Watching</button>
+  </section>
+
+  <section id="content" style="padding:40px;">
+    <h2>Trending Now</h2>
+    <div id="movieGrid"></div>
+  </section>
+
+  <script>
+    const movies = [
+      { title: "Island Heat", genre: "Drama" },
+      { title: "Caribbean Heist", genre: "Action" }
+    ];
+
+    const grid = document.getElementById("movieGrid");
+
+    grid.innerHTML = movies.map(m => `
+      <div style="margin:10px; padding:10px; border:1px solid #333;">
+        <h3>${m.title}</h3>
+        <p>${m.genre}</p>
+      </div>
+    `).join("");
+  </script>
+
+</body>
+</html>
